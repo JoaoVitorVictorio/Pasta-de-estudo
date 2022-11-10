@@ -1,0 +1,10 @@
+# Aprendendo a importar bibliotecas
+t = input('Digite algo: ')
+print('O tipo primitivo desse valor é: ',type(t))
+print('Só tem espaços? ', t.isspace())
+print('É numérico?' ,t.isnumeric())
+print('É alfabético? ',t.isalpha())
+print('É alfanúmerico?' ,t.isalnum())
+print('Está escrito em maiusculo?' ,t.isupper())
+print('Está escrito em minusculo?' ,t.islower())
+print('Está capitalizada?' ,t.capitalize())
