@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+</head>
+<body>
+    <h1>
+        Elemento color, range e file em HTML
+    </h1>
+    <fieldset>
+        <legend>Esolha de cor</legend>
+        <form action="cadastro.php" method="get" autocomplete="on">
+            <p>
+                <label for="cor">Cor: </label>
+                <input type="color" name="cor" id="cor" value="#00ff00">
+            </p>
+            <p>
+                <label for="nivel">Nível de Satisfação</label>
+                <input type="range" name="nivel" id="nivel" value="5" min="1" max="10">
+            </p>
+            <p>
+                <input type="submit" value="Enviar">
+                <input type="reset" value="Limpar">
+            </p>
+        </form>
+    </fieldset>
+    <fieldset>
+        <legend>Edição de perfil</legend>
+        <form action="cadastro.php" method="get" autocomplete="POST">
+            <p>
+                <label for="foto">Foto de perfil</label>
+                <input type="file" name="foto" id="foto">
+            </p>
+            <p>
+                <input type="submit" value="Enviar">
+                <input type="reset" value="Limpar">
+            </p>
+        </form>
+    </fieldset>
+</body>
+</html>

@@ -1,0 +1,25 @@
+body{
+    background-image: url(img/wallpaper001.jpg);
+    
+}
+
+.quadrado{
+    border: 1px solid black;
+    width: 268px;
+    height: 268px;
+    display: inline-block;
+    border-radius: 10px;
+    background-color: lightgray;
+}
+
+#q1{
+    background-color: lightblue;
+}
+
+#q2{
+    background-image: linear-gradient(to bottom, yellow, orange);
+}
+
+#q3{
+    background-image: url(img/wallpaper005.jpg);
+}

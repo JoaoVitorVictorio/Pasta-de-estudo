@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: dimgray;
+            margin: 0px;
+        }
+        header{
+            background-color: white;
+            padding: 10px;
+            margin: 10px;
+        }
+        h1{
+            text-align: center;
+        }
+        main{
+            background-color: white;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 20px 0px;
+            box-shadow: 4px 4px 9px 0px rgba(0, 0, 0, 0.397);
+        }
+        nav{
+            background-color: rgba(173, 172, 172, 0.877);
+            padding: 3px;
+            box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.5);
+        }
+        nav > a{
+            text-decoration: none;
+            color: white;
+            font-weight: lighter;
+            margin-right: 100px;
+        }
+        nav > a:hover{
+            color: blue;
+            text-decoration: underline;
+        }
+        article{
+            background-color: lightgray;
+        }
+        article > aside{
+            background-color: rgb(179, 178, 178);
+        }
+        aside > p{
+            text-align: right;
+        }
+        footer{
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 1px;
+            margin: 0px;
+        }
+        footer > p{
+            margin: 0px;
+        }
+        #bola{
+            height: 100px;
+            width: 100px;
+            background-color: white;
+            border-radius: 100%;
+            margin: 10px;
+            border: 1px solid black;
+        }
+    </style>
+    <title>Grouping Tags</title>
+</head>
+<body>
+    <header>
+        <h1>Meu site</h1>
+        <nav>
+            <a href="#">Link</a>
+            <a href="#">Link</a>
+            <a href="#">Link</a>
+            <a href="#">Link</a>
+            <a href="#">Link</a>
+        </nav>
+    </header>
+    <main>
+        <section id="assuntos">
+
+        </section>
+        <section id="noticias">
+            <article>
+                <h2>Notícia sobre o Brasil</h2>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam fugit ipsam vel consequuntur laborum tenetur aliquam placeat earum aut animi, soluta ratione suscipit doloremque nesciunt reprehenderit eius? Commodi, nesciunt ea.</p>
+                <aside>
+                    <p>Artigo escrito por: João</p>
+                </aside>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <p>Desenvolvido p/ treinamento</p>
+    </footer>
+</body>
+</html>
