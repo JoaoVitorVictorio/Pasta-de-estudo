@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulando a DOM</title>
+    <style>
+        body{
+            background-color: black;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Estudando a DOM</h1>
+    <p>Resultado: </p>
+    <p><strong>DOM</strong> em JavaScript.</p>
+    <div id="msg">
+        Clique aqui!
+    </div>
+    <script>
+        var corpo = window.document.body
+        var p1 = window.document.getElementsByTagName('p') [1]
+        window.document.write('Temos um: ' + p1.innerText)
+        // document.write(p1.innerHTML) /* innerHTML pega com a formatação e o innerText sem formatação */
+        p1.style.color = 'red'
+        corpo.style.background = 'gray'
+        // window.alert(p1.innerText) /* Cria um alerta na parte superior do navegador */
+        var d = window.document.getElementById('msg')
+        /*getElement pode ser getElementsByClassName,  getElementById, getElementsByTagName, getElementsByName e getElementsByTagNameNS para selecionar um elemento ou pelo metodo de querySlector exemplo : window.document.querySelector('div#msg')*/
+        d.style.background = 'green'
+        d.innerText = 'Estou aguardando...'
+    </script>
+</body>
+</html>
