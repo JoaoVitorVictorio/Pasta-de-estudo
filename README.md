@@ -1,2 +1,2 @@
-# Pasta-de-estudo
+# Repositório p/ estudos
  
