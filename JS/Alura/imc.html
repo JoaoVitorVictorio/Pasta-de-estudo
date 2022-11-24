@@ -4,21 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculando IMC</title>
+    <title>Calculadora IMC</title>
 </head>
 <body>
     <script> 
-        function mostra(frase) {
+        function exibir(frase) {
             document.write(frase);
         }
         function calculaImc(altura, peso) {
             return peso / (altura * altura);
         }
-        var nome = prompt("Informe o seu nome");
+        var nome = prompt("Informe o seu nome: ");
         var alturaInformada = prompt(nome + ", informe sua altura: ");
         var pesoInformado = prompt(nome + ", informe seu peso: ");
         var imc = calculaImc(alturaInformada, pesoInformado);
-        document.write(nome + ", o seu IMC é: " + imc);
+        if (imc < 18.5){
+            exibir(nome + ", o seu IMC é: " + imc + " <br><br> Seu IMC está abaixo do recomendado, cuidado!")
+        } else if(imc > 30){
+            exibir(nome + ", o seu IMC é: " + imc + " <br><br> Seu IMC está acima do recomendado, cuidado!")
+        } else{
+            exibir(nome + ", o seu IMC é: " + imc + " <br><br> Seu IMC está excelente!")
+        }
     </script>
 </body>
 </html>
