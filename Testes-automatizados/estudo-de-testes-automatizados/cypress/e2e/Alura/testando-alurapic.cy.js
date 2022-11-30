@@ -43,4 +43,26 @@ describe('Login e registro de usuario alurapic', () => {
         cy.contains('button', 'Register').click(); // Clicou no botão de Registrar para verificar se irá aparecer a mensagem de (O comprimento mínimo é 8).
         cy.contains('ap-vmessage', 'Mininum length is 8').should('be.visible'); // Verifica se a mensagem de (e-mail é obrigatório) está visivel.
     })
+
+    it('Verificando login com usuário válido', () => {
+        cy.visit('https://alura-fotos.herokuapp.com')
+        cy.login('flavio', '123');
+        cy.contains('a', '(Logout)').should('be.visible');
+    })
+
+    it('Verificando login com usuário inválido', () => {
+        cy.visit('https://alura-fotos.herokuapp.com')
+        cy.login('joao', '321');
+        cy.on('window:alert', (str) => {
+            expect(str).to.equal('Invalid user name or password')
+        })
+    
+    })
+
+    it.only('Cadastrando novo usuário', () => {
+        cy.visit('https://alura-fotos.herokuapp.com')
+        cy.contains('a', 'Register now').click();
+        cy.registro('teste@gmail.com', 'teste automatizado', 'automatizando', '123654789')
+        cy.contains('button', 'Register').click();
+    })
 })
