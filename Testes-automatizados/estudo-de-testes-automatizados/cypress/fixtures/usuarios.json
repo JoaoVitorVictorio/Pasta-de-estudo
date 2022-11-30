@@ -1,0 +1,32 @@
+[
+    {
+        "email": "joao@gmail.com",
+        "fullName": "joao teste 1",
+        "userName": "joao",
+        "password": "123654789"
+    },
+    {
+        "email": "vitor@gmail.com",
+        "fullName": "vitor teste 2",
+        "userName": "vitor",
+        "password": "987654321"
+    },
+    {
+        "email": "victorio",
+        "fullName": "victorio teste 3",
+        "userName": "victorio",
+        "password": "147852369"
+    },
+    {
+        "email": "pedro@gmail.com",
+        "fullName": "pedro teste 4",
+        "userName": "pedro",
+        "password": "123654789"
+    },
+    {
+        "email": "nayra",
+        "fullName": "nayra teste 4",
+        "userName": "nayra",
+        "password": "963258741"
+    }
+]

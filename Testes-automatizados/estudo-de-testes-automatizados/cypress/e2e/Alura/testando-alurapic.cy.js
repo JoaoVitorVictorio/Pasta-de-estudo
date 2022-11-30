@@ -59,10 +59,23 @@ describe('Login e registro de usuario alurapic', () => {
     
     })
 
-    it.only('Cadastrando novo usuário', () => {
-        cy.visit('https://alura-fotos.herokuapp.com')
-        cy.contains('a', 'Register now').click();
-        cy.registro('teste@gmail.com', 'teste automatizado', 'automatizando', '123654789')
-        cy.contains('button', 'Register').click();
+    //it.only('Cadastrando novo usuário', () => { //only roda somente este cód
+    //    cy.visit('https://alura-fotos.herokuapp.com')
+    //    cy.contains('a', 'Register now').click();
+    //    cy.registro('teste@gmail.com', 'teste automatizado', 'automatizando', '123654789');
+    //    cy.contains('button', 'Register').click();
+    //})
+
+    const usuarios = require('../../fixtures/usuarios.json');
+    usuarios.forEach(usuario => {
+        it.only(`Registrando novo usuário ${usuario.userName}`, () => { //only roda somente este cód
+            cy.visit('https://alura-fotos.herokuapp.com')
+            cy.contains('a', 'Register now').click();
+            cy.get('input[formcontrolname="email"]').type(usuario.email);
+            cy.get('input[formcontrolname="fullName"]').type(usuario.fullName);
+            cy.get('input[formcontrolname="userName"]').type(usuario.userName);
+            cy.get('input[formcontrolname="password"]').type(usuario.password);
+            cy.contains('button', 'Register').click();
+        })
     })
 })
