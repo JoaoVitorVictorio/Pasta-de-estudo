@@ -1,18 +1,20 @@
 describe('Buscar fotos e dados', () => {
-    it('Buscar fotos', ()=> {
+    const tempoEsperado = Math.random() * 2000;
+    it.only('Buscar fotos', ()=> {
         cy.request({ // request faz uma requisição
             method:'GET',
             url: 'https://apialurapic.herokuapp.com/flavio/photos'
         }).then((res) => {
             expect(res.status).to.be.equal(200)
             expect(res.body).is.not.empty
-            expect(res.body[0]).to.have.property('description')
-            expect(res.body[0].description).to.be.equal('Farol iluminado')
+            expect(res.body[0]).to.have.property('description')// Verifica se tem descrição no produto.
+            expect(res.body[0].description).to.be.equal('Farol iluminado')// Verifica o nome do produto.
+            expect(res.duration).to.be.lte(tempoEsperado) // Testa o tempo de limite de resposta.
         }
         )
     })
 
-    it.only('Fazer login', ()=> {
+    it('Fazer login', ()=> {
         cy.request({
             method:'POST',
             url: 'https://apialurapic.herokuapp.com/user/login',

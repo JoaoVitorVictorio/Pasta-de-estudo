@@ -2,6 +2,9 @@ describe('Login e registro de usuario alurapic', () => {
 
     beforeEach(() => {
         cy.visit('https://alura-fotos.herokuapp.com') // Entrou no site da Alurapic.
+        cy.intercept('POST', 'https://apialurapic.herokuapp.com/user/login', {
+            statusCode: 400
+        }).as('stubPost')
     })
 
     it('Verificando mensagem de validação', () => {
@@ -46,7 +49,8 @@ describe('Login e registro de usuario alurapic', () => {
 
     it('Verificando login com usuário válido', () => {
         cy.visit('https://alura-fotos.herokuapp.com')
-        cy.login('flavio', '123');
+        cy.login(Cypress.env('userName'), Cypress.env('password'));
+        cy.wait('@stubPost')
         cy.contains('a', '(Logout)').should('be.visible');
     })
 
@@ -68,7 +72,7 @@ describe('Login e registro de usuario alurapic', () => {
 
     const usuarios = require('../../fixtures/usuarios.json');
     usuarios.forEach(usuario => {
-        it.only(`Registrando novo usuário ${usuario.userName}`, () => { //only roda somente este cód
+        it(`Registrando novo usuário ${usuario.userName}`, () => { //only roda somente este cód
             cy.visit('https://alura-fotos.herokuapp.com')
             cy.contains('a', 'Register now').click();
             cy.get('input[formcontrolname="email"]').type(usuario.email);
