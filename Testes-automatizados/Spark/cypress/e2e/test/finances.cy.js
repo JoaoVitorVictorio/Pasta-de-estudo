@@ -64,6 +64,33 @@ describe('Dev Finances', () => {
         .click()
         cy.get('#data-table tbody tr').should('have.length', 0)
     });
+        it.only('Validar saldo com diversas transações', () => {
+            const entrada = 'Mesada'
+            const saida = 'Tênis'
+    
+            //Inserindo uma entrada
+            cy.get('#transaction .button').click()
+            cy.get('#description').type(entrada)
+            cy.get('#amount').type(150)
+            cy.get('[type=date]').type('2022-12-07')
+            cy.get('button').contains('Salvar').click()
+    
+            //Inserindo uma saida
+            cy.get('#transaction .button').click()
+            cy.get('#description').type(saida)
+            cy.get('#amount').type(-100)
+            cy.get('[type=date]').type('2022-12-08')
+            cy.get('button').contains('Salvar').click()
+
+            cy.get('#data-table tbody tr')
+            .each(($el, index, $list) => {
+                cy.log(index)
+                cy.get($el).find('td.income, td.expense')
+                    .invoke('text').then(text => {
+                        cy.log(text)
+                    })
+            })
+        });
 });
 
 //npx cypress open --config viewportWidth=411, viewportHeight=823 (Abre em diferente resuluções)
