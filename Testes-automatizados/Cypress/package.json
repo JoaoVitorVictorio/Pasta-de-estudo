@@ -1,0 +1,14 @@
+{
+  "name": "primeiro-teste-automatizado",
+  "version": "1.0.0",
+  "description": "Primeiro teste automatizado",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cypress open"
+  },
+  "author": "João Vitor Victorio",
+  "license": "ISC",
+  "devDependencies": {
+    "mochawesome": "^7.1.3"
+  }
+}
